@@ -49,7 +49,7 @@ void pala_credits() {
 
 
 
-/* CHAR ARRAY OPERATION FUNCTIONS*/
+/* CHAR ARRAY OPERATION FUNCTIONS */
 
 
 /*
@@ -150,4 +150,31 @@ long double pala_getRightTriangleHypotenuse(long double edge1, long double edge2
  */
 long double pala_getRightTriangleEdge(long double edge, long double hypotenuse) {
 	return powl(powl(hypotenuse, 2) - powl(edge, 2), 0.5);
+}
+
+
+
+
+/* SEARCHING ALGORITHMS */
+
+
+/*
+ * Function:  pala_findIntegerFromArrayWithIterativeSearch
+ * -------------------------------------------------------
+ *   This function finds index of searching number in the given array.
+ *
+ *   array:    The array which searched for.
+ *   search:   The number which wanted to searching.
+ *   size:     The size of given array.
+ *
+ *   returns:  The index of first found search number in the array. If there is no then, it returns -1.
+ */
+long long pala_findIntegerFromArrayWithIterativeSearch(long long *array, long long search, unsigned long long size) {
+	unsigned long long i;
+	for (i = 0; i < size; ++i) {
+		if (array[i] == search) {
+			return i;
+		}
+	}
+	return -1;
 }
