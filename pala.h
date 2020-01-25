@@ -155,6 +155,74 @@ long double pala_getRightTriangleEdge(long double edge, long double hypotenuse) 
 
 
 
+/* ARRAY FUNCTIONS */
+
+
+/*
+ * Function:  pala_showIntegerArray
+ * --------------------------------
+ *   This functions shows each elements where in given integer array.
+ *
+ *   array:  The array which wanted to show.
+ *   size:   The size of given array.
+ */
+void pala_showIntegerArray(int *array, unsigned long long size) {
+	unsigned long long i;
+	for (i = 0; i < size; ++i) {
+		printf("%d ", array[i]);
+	}
+}
+
+
+
+
+/* SWAP FUNCTIONS */
+
+
+/*
+ * Function:  pala_swapIntegers
+ * ----------------------------
+ *   This function swaps integer.
+ *
+ *   a:  The first given integer.
+ *   b:  The second given integer.
+ */
+void pala_swapIntegers(int *a, int *b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+
+
+
+/* SORTING ALGORITHMS */
+
+
+/*
+ * Function:  pala_sortIntegerArrayWithBubbleSort
+ * ----------------------------------------------
+ *   This function sorts integer array ascendingly.
+ *
+ *   array:    Given array which wanted to sort with bubble sort.
+ *   size:     The size of array.
+ *
+ *   returns:  Sorted integer array.
+ */
+int * pala_sortIntegerArrayWithBubbleSort(int *array, unsigned long long size) {
+	unsigned long long i, j;
+	for (i = 0; i < size - 1; ++i) {
+		for (j = 0; j < size - i - 1; ++j) {
+			if (array[j] > array[j + 1]) {
+				pala_swapIntegers(&array[j], &array[j + 1]);
+			}
+		}
+	}
+}
+
+
+
+
 /* SEARCHING ALGORITHMS */
 
 
